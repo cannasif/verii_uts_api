@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Success" xml:space="preserve"><value>Success.</value></data>
+  <data name="Created" xml:space="preserve"><value>Record created successfully.</value></data>
+  <data name="Updated" xml:space="preserve"><value>Record updated successfully.</value></data>
+  <data name="Deleted" xml:space="preserve"><value>Record deleted successfully.</value></data>
+  <data name="ValidationFailed" xml:space="preserve"><value>Validation failed.</value></data>
+  <data name="UnexpectedError" xml:space="preserve"><value>An unexpected error occurred.</value></data>
+  <data name="Unauthorized" xml:space="preserve"><value>Unauthorized.</value></data>
+  <data name="InvalidCredentials" xml:space="preserve"><value>Invalid email or password.</value></data>
+  <data name="EmailAlreadyInUse" xml:space="preserve"><value>Email is already in use.</value></data>
+  <data name="UserNotFound" xml:space="preserve"><value>User not found.</value></data>
+  <data name="CurrentPasswordIncorrect" xml:space="preserve"><value>Current password is incorrect.</value></data>
+  <data name="InvalidResetToken" xml:space="preserve"><value>Invalid reset token.</value></data>
+  <data name="ResetTokenExpiredOrUsed" xml:space="preserve"><value>Reset token is expired or already used.</value></data>
+  <data name="PermissionGroupNotFound" xml:space="preserve"><value>Permission group not found.</value></data>
+  <data name="PermissionDefinitionsNotFound" xml:space="preserve"><value>One or more permission definitions were not found.</value></data>
+  <data name="PermissionGroupNameAlreadyInUse" xml:space="preserve"><value>Permission group name is already in use.</value></data>
+  <data name="PermissionGroupInUse" xml:space="preserve"><value>This permission group is assigned to one or more users and cannot be deleted.</value></data>
+  <data name="SystemPermissionGroupCannotBeDeleted" xml:space="preserve"><value>System permission groups cannot be deleted.</value></data>
+  <data name="RoleNotFound" xml:space="preserve"><value>Role not found.</value></data>
+  <data name="PermissionGroupsNotFound" xml:space="preserve"><value>One or more permission groups were not found.</value></data>
+  <data name="ForgotPasswordIfExists" xml:space="preserve"><value>If the user exists, reset instructions will be sent.</value></data>
+  <data name="ForgotPasswordEmailSent" xml:space="preserve"><value>Password reset information was sent by email.</value></data>
+  <data name="ForgotPasswordPreview" xml:space="preserve"><value>SMTP is not active or email delivery failed. Token is returned in preview.</value></data>
+  <data name="LoginSuccessful" xml:space="preserve"><value>Login successful.</value></data>
+  <data name="RegisterSuccessful" xml:space="preserve"><value>Registration successful.</value></data>
+  <data name="PasswordChanged" xml:space="preserve"><value>Password changed successfully.</value></data>
+  <data name="PasswordResetSuccessful" xml:space="preserve"><value>Password reset successfully.</value></data>
+  <data name="FetchSuccessful" xml:space="preserve"><value>Records fetched successfully.</value></data>
+  <data name="SmtpUpdated" xml:space="preserve"><value>SMTP settings updated successfully.</value></data>
+</root>

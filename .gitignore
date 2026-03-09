@@ -1,0 +1,63 @@
+# ================================
+# Build outputs
+# ================================
+bin/
+obj/
+out/
+publish/
+
+# ================================
+# IDE / Editors
+# ================================
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.sln.iml
+
+# ================================
+# Logs
+# ================================
+*.log
+
+# ================================
+# OS files
+# ================================
+.DS_Store
+Thumbs.db
+
+# ================================
+# Environment / Secrets
+# ================================
+.env
+.env.*
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Local.json
+appsettings.*.Local.json
+DataProtectionKeys/
+
+# ================================
+# NuGet
+# ================================
+.nuget/
+packages/
+
+# ================================
+# Test / coverage
+# ================================
+TestResults/
+coverage/
+
+# ================================
+# Docker
+# ================================
+docker-compose.override.yml
+
+# ================================
+# Generated uploads
+# ================================
+uts_api.Api/wwwroot/uploads/

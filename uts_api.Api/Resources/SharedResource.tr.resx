@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Success" xml:space="preserve"><value>Basarili.</value></data>
+  <data name="Created" xml:space="preserve"><value>Kayit basariyla olusturuldu.</value></data>
+  <data name="Updated" xml:space="preserve"><value>Kayit basariyla guncellendi.</value></data>
+  <data name="Deleted" xml:space="preserve"><value>Kayit basariyla silindi.</value></data>
+  <data name="ValidationFailed" xml:space="preserve"><value>Dogrulama basarisiz.</value></data>
+  <data name="UnexpectedError" xml:space="preserve"><value>Beklenmeyen bir hata olustu.</value></data>
+  <data name="Unauthorized" xml:space="preserve"><value>Yetkisiz istek.</value></data>
+  <data name="InvalidCredentials" xml:space="preserve"><value>E-posta veya sifre hatali.</value></data>
+  <data name="EmailAlreadyInUse" xml:space="preserve"><value>E-posta adresi zaten kullanimda.</value></data>
+  <data name="UserNotFound" xml:space="preserve"><value>Kullanici bulunamadi.</value></data>
+  <data name="CurrentPasswordIncorrect" xml:space="preserve"><value>Mevcut sifre hatali.</value></data>
+  <data name="InvalidResetToken" xml:space="preserve"><value>Gecersiz sifre sifirlama tokeni.</value></data>
+  <data name="ResetTokenExpiredOrUsed" xml:space="preserve"><value>Sifre sifirlama tokeni suresi dolmus veya kullanilmis.</value></data>
+  <data name="PermissionGroupNotFound" xml:space="preserve"><value>Yetki grubu bulunamadi.</value></data>
+  <data name="PermissionDefinitionsNotFound" xml:space="preserve"><value>Bir veya daha fazla yetki tanimi bulunamadi.</value></data>
+  <data name="PermissionGroupNameAlreadyInUse" xml:space="preserve"><value>Yetki grubu adi zaten kullanimda.</value></data>
+  <data name="PermissionGroupInUse" xml:space="preserve"><value>Bu yetki grubu bir veya daha fazla kullaniciya atanmis oldugu icin silinemez.</value></data>
+  <data name="SystemPermissionGroupCannotBeDeleted" xml:space="preserve"><value>Sistem yetki gruplari silinemez.</value></data>
+  <data name="RoleNotFound" xml:space="preserve"><value>Rol bulunamadi.</value></data>
+  <data name="PermissionGroupsNotFound" xml:space="preserve"><value>Bir veya daha fazla yetki grubu bulunamadi.</value></data>
+  <data name="ForgotPasswordIfExists" xml:space="preserve"><value>Kullanici varsa sifre sifirlama talimati gonderilecektir.</value></data>
+  <data name="ForgotPasswordEmailSent" xml:space="preserve"><value>Sifre sifirlama bilgisi e-posta ile gonderildi.</value></data>
+  <data name="ForgotPasswordPreview" xml:space="preserve"><value>SMTP aktif degil veya e-posta gonderimi basarisiz oldu. Token onizleme olarak donduruldu.</value></data>
+  <data name="LoginSuccessful" xml:space="preserve"><value>Giris basarili.</value></data>
+  <data name="RegisterSuccessful" xml:space="preserve"><value>Kayit basarili.</value></data>
+  <data name="PasswordChanged" xml:space="preserve"><value>Sifre basariyla degistirildi.</value></data>
+  <data name="PasswordResetSuccessful" xml:space="preserve"><value>Sifre basariyla sifirlandi.</value></data>
+  <data name="FetchSuccessful" xml:space="preserve"><value>Kayitlar basariyla getirildi.</value></data>
+  <data name="SmtpUpdated" xml:space="preserve"><value>SMTP ayarlari basariyla guncellendi.</value></data>
+</root>
