@@ -17,6 +17,7 @@ public interface IApplicationDbContext
     DbSet<HangfireJobLog> HangfireJobLogs { get; }
     DbSet<Stock> Stocks { get; }
     DbSet<Customer> Customers { get; }
+    DbSet<UtsVermeListItem> UtsVermeListItems { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

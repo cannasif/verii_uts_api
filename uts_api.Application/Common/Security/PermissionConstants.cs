@@ -63,6 +63,11 @@ public static class PermissionConstants
         public const string Sync = "customers.sync";
     }
 
+    public static class UtsVermeList
+    {
+        public const string View = "uts_verme_list.view";
+    }
+
     public static IReadOnlyCollection<PermissionDefinitionSeedModel> All { get; } =
     [
         new("Auth", "My Profile", Auth.Me, "Read current user"),
@@ -85,6 +90,7 @@ public static class PermissionConstants
         new("Stocks", "View Stocks", Stocks.View, "Read RII_STOCK records"),
         new("Stocks", "Sync Stocks", Stocks.Sync, "Trigger RII_STOCK sync job"),
         new("Customers", "View Customers", Customers.View, "Read RII_CUSTOMERS records"),
-        new("Customers", "Sync Customers", Customers.Sync, "Trigger RII_CUSTOMERS sync job")
+        new("Customers", "Sync Customers", Customers.Sync, "Trigger RII_CUSTOMERS sync job"),
+        new("UtsVermeList", "View UTS Verme List", UtsVermeList.View, "Read VWLEGO_UTS_VERME_LIST records")
     ];
 }
