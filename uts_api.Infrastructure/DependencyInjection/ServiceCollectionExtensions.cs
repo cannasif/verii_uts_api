@@ -44,6 +44,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IStockService, StockService>();
         services.AddScoped<ICustomerFunctionService, CustomerFunctionService>();
         services.AddScoped<ICustomerService, CustomerService>();
+        services.AddScoped<IUtsVermeListService, UtsVermeListService>();
 
         services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
