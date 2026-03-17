@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using uts_api.Application.Common.Interfaces;
 using uts_api.Application.Common.Models;
-using uts_api.Application.DTOs.UtsVermeList;
+using uts_api.Application.DTOs.UtsTuketiciVermeList;
 using uts_api.Application.Interfaces;
 using uts_api.Domain.Entities;
 using uts_api.Infrastructure.Persistence;
 
 namespace uts_api.Infrastructure.Services;
 
-public sealed class UtsVermeListService : IUtsVermeListService
+public sealed class UtsTuketiciVermeListService : IUtsTuketiciVermeListService
 {
     private static readonly IReadOnlyDictionary<string, string> AllowedColumns = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
@@ -19,6 +19,7 @@ public sealed class UtsVermeListService : IUtsVermeListService
         ["git"] = "Git",
         ["kun"] = "Kun",
         ["uno"] = "Uno",
+        ["vkn"] = "Vkn",
         ["lsNo"] = "LsNo",
         ["adt"] = "Adt",
         ["sinif"] = "Sinif",
@@ -29,8 +30,6 @@ public sealed class UtsVermeListService : IUtsVermeListService
         ["stokAdi"] = "StokAdi",
         ["utsDurum"] = "UtsDurum",
         ["uretimLsNo"] = "UretimLsNo",
-        ["utrh"] = "Utrh",
-        ["strh"] = "Strh",
         ["depoKod"] = "DepoKod",
         ["olcuBr"] = "OlcuBr",
         ["stharGcMik"] = "StharGcMik",
@@ -41,16 +40,16 @@ public sealed class UtsVermeListService : IUtsVermeListService
 
     private readonly UtsDbContext _dbContext;
 
-    public UtsVermeListService(UtsDbContext dbContext)
+    public UtsTuketiciVermeListService(UtsDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
-    public async Task<IReadOnlyCollection<UtsVermeListItemDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyCollection<UtsTuketiciVermeListItemDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Set<UtsVermeListItem>()
+        return await _dbContext.Set<UtsTuketiciVermeListItem>()
             .AsNoTracking()
-            .Select(x => new UtsVermeListItemDto
+            .Select(x => new UtsTuketiciVermeListItemDto
             {
                 Chk = x.Chk,
                 SiraNo = x.SiraNo,
@@ -59,6 +58,7 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 Git = x.Git,
                 Kun = x.Kun,
                 Uno = x.Uno,
+                Vkn = x.Vkn,
                 LsNo = x.LsNo,
                 Adt = x.Adt,
                 Sinif = x.Sinif,
@@ -69,8 +69,6 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 StokAdi = x.StokAdi,
                 UtsDurum = x.UtsDurum,
                 UretimLsNo = x.UretimLsNo,
-                Utrh = x.Utrh,
-                Strh = x.Strh,
                 DepoKod = x.DepoKod,
                 OlcuBr = x.OlcuBr,
                 StharGcMik = x.StharGcMik,
@@ -81,16 +79,18 @@ public sealed class UtsVermeListService : IUtsVermeListService
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<PagedResult<UtsVermeListItemDto>> GetPagedAsync(PagedRequest request, CancellationToken cancellationToken = default)
+    public async Task<PagedResult<UtsTuketiciVermeListItemDto>> GetPagedAsync(PagedRequest request, CancellationToken cancellationToken = default)
     {
-        var query = _dbContext.Set<UtsVermeListItem>()
+        var query = _dbContext.Set<UtsTuketiciVermeListItem>()
             .AsNoTracking()
             .ApplySearch(
                 request.Search,
+                "Chk",
                 "Bno",
                 "Git",
                 "Kun",
                 "Uno",
+                "Vkn",
                 "LsNo",
                 "Sinif",
                 "CariKodu",
@@ -99,13 +99,11 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 "StokAdi",
                 "UtsDurum",
                 "UretimLsNo",
-                "Utrh",
-                "Strh",
                 "ImalIthal",
                 "UretimBildirimi")
             .ApplyFilters(request.Filters, AllowedColumns, request.FilterLogic)
             .ApplySorting(request.SortBy, request.SortDirection, AllowedColumns)
-            .Select(x => new UtsVermeListItemDto
+            .Select(x => new UtsTuketiciVermeListItemDto
             {
                 Chk = x.Chk,
                 SiraNo = x.SiraNo,
@@ -114,6 +112,7 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 Git = x.Git,
                 Kun = x.Kun,
                 Uno = x.Uno,
+                Vkn = x.Vkn,
                 LsNo = x.LsNo,
                 Adt = x.Adt,
                 Sinif = x.Sinif,
@@ -124,8 +123,6 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 StokAdi = x.StokAdi,
                 UtsDurum = x.UtsDurum,
                 UretimLsNo = x.UretimLsNo,
-                Utrh = x.Utrh,
-                Strh = x.Strh,
                 DepoKod = x.DepoKod,
                 OlcuBr = x.OlcuBr,
                 StharGcMik = x.StharGcMik,

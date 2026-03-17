@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using uts_api.Application.Common.Interfaces;
 using uts_api.Application.Common.Models;
-using uts_api.Application.DTOs.UtsVermeList;
+using uts_api.Application.DTOs.UtsIhracatList;
 using uts_api.Application.Interfaces;
 using uts_api.Domain.Entities;
 using uts_api.Infrastructure.Persistence;
 
 namespace uts_api.Infrastructure.Services;
 
-public sealed class UtsVermeListService : IUtsVermeListService
+public sealed class UtsIhracatListService : IUtsIhracatListService
 {
     private static readonly IReadOnlyDictionary<string, string> AllowedColumns = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
@@ -29,28 +29,27 @@ public sealed class UtsVermeListService : IUtsVermeListService
         ["stokAdi"] = "StokAdi",
         ["utsDurum"] = "UtsDurum",
         ["uretimLsNo"] = "UretimLsNo",
-        ["utrh"] = "Utrh",
-        ["strh"] = "Strh",
         ["depoKod"] = "DepoKod",
         ["olcuBr"] = "OlcuBr",
         ["stharGcMik"] = "StharGcMik",
         ["straInc"] = "StraInc",
         ["imalIthal"] = "ImalIthal",
+        ["gbn"] = "Gbn",
         ["uretimBildirimi"] = "UretimBildirimi"
     };
 
     private readonly UtsDbContext _dbContext;
 
-    public UtsVermeListService(UtsDbContext dbContext)
+    public UtsIhracatListService(UtsDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
-    public async Task<IReadOnlyCollection<UtsVermeListItemDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyCollection<UtsIhracatListItemDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Set<UtsVermeListItem>()
+        return await _dbContext.Set<UtsIhracatListItem>()
             .AsNoTracking()
-            .Select(x => new UtsVermeListItemDto
+            .Select(x => new UtsIhracatListItemDto
             {
                 Chk = x.Chk,
                 SiraNo = x.SiraNo,
@@ -69,24 +68,24 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 StokAdi = x.StokAdi,
                 UtsDurum = x.UtsDurum,
                 UretimLsNo = x.UretimLsNo,
-                Utrh = x.Utrh,
-                Strh = x.Strh,
                 DepoKod = x.DepoKod,
                 OlcuBr = x.OlcuBr,
                 StharGcMik = x.StharGcMik,
                 StraInc = x.StraInc,
                 ImalIthal = x.ImalIthal,
+                Gbn = x.Gbn,
                 UretimBildirimi = x.UretimBildirimi
             })
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<PagedResult<UtsVermeListItemDto>> GetPagedAsync(PagedRequest request, CancellationToken cancellationToken = default)
+    public async Task<PagedResult<UtsIhracatListItemDto>> GetPagedAsync(PagedRequest request, CancellationToken cancellationToken = default)
     {
-        var query = _dbContext.Set<UtsVermeListItem>()
+        var query = _dbContext.Set<UtsIhracatListItem>()
             .AsNoTracking()
             .ApplySearch(
                 request.Search,
+                "Chk",
                 "Bno",
                 "Git",
                 "Kun",
@@ -99,13 +98,12 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 "StokAdi",
                 "UtsDurum",
                 "UretimLsNo",
-                "Utrh",
-                "Strh",
                 "ImalIthal",
+                "Gbn",
                 "UretimBildirimi")
             .ApplyFilters(request.Filters, AllowedColumns, request.FilterLogic)
             .ApplySorting(request.SortBy, request.SortDirection, AllowedColumns)
-            .Select(x => new UtsVermeListItemDto
+            .Select(x => new UtsIhracatListItemDto
             {
                 Chk = x.Chk,
                 SiraNo = x.SiraNo,
@@ -124,13 +122,12 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 StokAdi = x.StokAdi,
                 UtsDurum = x.UtsDurum,
                 UretimLsNo = x.UretimLsNo,
-                Utrh = x.Utrh,
-                Strh = x.Strh,
                 DepoKod = x.DepoKod,
                 OlcuBr = x.OlcuBr,
                 StharGcMik = x.StharGcMik,
                 StraInc = x.StraInc,
                 ImalIthal = x.ImalIthal,
+                Gbn = x.Gbn,
                 UretimBildirimi = x.UretimBildirimi
             });
 

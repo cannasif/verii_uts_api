@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using uts_api.Application.Common.Interfaces;
 using uts_api.Application.Common.Models;
-using uts_api.Application.DTOs.UtsVermeList;
+using uts_api.Application.DTOs.UtsIthalatList;
 using uts_api.Application.Interfaces;
 using uts_api.Domain.Entities;
 using uts_api.Infrastructure.Persistence;
 
 namespace uts_api.Infrastructure.Services;
 
-public sealed class UtsVermeListService : IUtsVermeListService
+public sealed class UtsIthalatListService : IUtsIthalatListService
 {
     private static readonly IReadOnlyDictionary<string, string> AllowedColumns = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
@@ -29,28 +29,31 @@ public sealed class UtsVermeListService : IUtsVermeListService
         ["stokAdi"] = "StokAdi",
         ["utsDurum"] = "UtsDurum",
         ["uretimLsNo"] = "UretimLsNo",
-        ["utrh"] = "Utrh",
-        ["strh"] = "Strh",
+        ["urt"] = "Urt",
+        ["skt"] = "Skt",
         ["depoKod"] = "DepoKod",
         ["olcuBr"] = "OlcuBr",
         ["stharGcMik"] = "StharGcMik",
         ["straInc"] = "StraInc",
         ["imalIthal"] = "ImalIthal",
-        ["uretimBildirimi"] = "UretimBildirimi"
+        ["gbn"] = "Gbn",
+        ["ieu"] = "Ieu",
+        ["meu"] = "Meu",
+        ["udi"] = "Udi"
     };
 
     private readonly UtsDbContext _dbContext;
 
-    public UtsVermeListService(UtsDbContext dbContext)
+    public UtsIthalatListService(UtsDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
-    public async Task<IReadOnlyCollection<UtsVermeListItemDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyCollection<UtsIthalatListItemDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Set<UtsVermeListItem>()
+        return await _dbContext.Set<UtsIthalatListItem>()
             .AsNoTracking()
-            .Select(x => new UtsVermeListItemDto
+            .Select(x => new UtsIthalatListItemDto
             {
                 Chk = x.Chk,
                 SiraNo = x.SiraNo,
@@ -69,24 +72,28 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 StokAdi = x.StokAdi,
                 UtsDurum = x.UtsDurum,
                 UretimLsNo = x.UretimLsNo,
-                Utrh = x.Utrh,
-                Strh = x.Strh,
+                Urt = x.Urt,
+                Skt = x.Skt,
                 DepoKod = x.DepoKod,
                 OlcuBr = x.OlcuBr,
                 StharGcMik = x.StharGcMik,
                 StraInc = x.StraInc,
                 ImalIthal = x.ImalIthal,
-                UretimBildirimi = x.UretimBildirimi
+                Gbn = x.Gbn,
+                Ieu = x.Ieu,
+                Meu = x.Meu,
+                Udi = x.Udi
             })
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<PagedResult<UtsVermeListItemDto>> GetPagedAsync(PagedRequest request, CancellationToken cancellationToken = default)
+    public async Task<PagedResult<UtsIthalatListItemDto>> GetPagedAsync(PagedRequest request, CancellationToken cancellationToken = default)
     {
-        var query = _dbContext.Set<UtsVermeListItem>()
+        var query = _dbContext.Set<UtsIthalatListItem>()
             .AsNoTracking()
             .ApplySearch(
                 request.Search,
+                "Chk",
                 "Bno",
                 "Git",
                 "Kun",
@@ -99,13 +106,15 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 "StokAdi",
                 "UtsDurum",
                 "UretimLsNo",
-                "Utrh",
-                "Strh",
+                "Urt",
+                "Skt",
                 "ImalIthal",
-                "UretimBildirimi")
+                "Gbn",
+                "Ieu",
+                "Meu")
             .ApplyFilters(request.Filters, AllowedColumns, request.FilterLogic)
             .ApplySorting(request.SortBy, request.SortDirection, AllowedColumns)
-            .Select(x => new UtsVermeListItemDto
+            .Select(x => new UtsIthalatListItemDto
             {
                 Chk = x.Chk,
                 SiraNo = x.SiraNo,
@@ -124,14 +133,17 @@ public sealed class UtsVermeListService : IUtsVermeListService
                 StokAdi = x.StokAdi,
                 UtsDurum = x.UtsDurum,
                 UretimLsNo = x.UretimLsNo,
-                Utrh = x.Utrh,
-                Strh = x.Strh,
+                Urt = x.Urt,
+                Skt = x.Skt,
                 DepoKod = x.DepoKod,
                 OlcuBr = x.OlcuBr,
                 StharGcMik = x.StharGcMik,
                 StraInc = x.StraInc,
                 ImalIthal = x.ImalIthal,
-                UretimBildirimi = x.UretimBildirimi
+                Gbn = x.Gbn,
+                Ieu = x.Ieu,
+                Meu = x.Meu,
+                Udi = x.Udi
             });
 
         return await query.ToPagedResultAsync(request, cancellationToken);
