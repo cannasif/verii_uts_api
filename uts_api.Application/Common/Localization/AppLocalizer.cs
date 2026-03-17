@@ -37,7 +37,9 @@ public static class AppLocalizer
         [LocalizationKeys.HangfireMovedToDeadLetter] = "Moved to dead-letter queue.",
         [LocalizationKeys.HangfireSqlLogFailed] = "Hangfire job log SQL write failed. JobId: {0}",
         [LocalizationKeys.HangfireDeadLetterCaptured] = "Dead-letter Hangfire job captured. JobId: {0}, JobName: {1}, Queue: {2}, RetryCount: {3}, Reason: {4}, Exception: {5} - {6}",
-        [LocalizationKeys.HangfireHeartbeatExecuted] = "UTS Hangfire heartbeat job executed at {0}."
+        [LocalizationKeys.HangfireHeartbeatExecuted] = "UTS Hangfire heartbeat job executed at {0}.",
+        [LocalizationKeys.UtsLogNotFound] = "UTS log record not found.",
+        [LocalizationKeys.UretimTarihiNotFound] = "Production date record not found."
     };
 
     private static readonly IReadOnlyDictionary<string, string> Tr = new Dictionary<string, string>
@@ -73,7 +75,9 @@ public static class AppLocalizer
         [LocalizationKeys.HangfireMovedToDeadLetter] = "Dead-letter kuyruguna tasindi.",
         [LocalizationKeys.HangfireSqlLogFailed] = "Hangfire is logu SQL kaydi basarisiz. JobId: {0}",
         [LocalizationKeys.HangfireDeadLetterCaptured] = "Dead-letter Hangfire isi yakalandi. JobId: {0}, JobName: {1}, Queue: {2}, RetryCount: {3}, Sebep: {4}, Exception: {5} - {6}",
-        [LocalizationKeys.HangfireHeartbeatExecuted] = "UTS Hangfire heartbeat isi {0} tarihinde calisti."
+        [LocalizationKeys.HangfireHeartbeatExecuted] = "UTS Hangfire heartbeat isi {0} tarihinde calisti.",
+        [LocalizationKeys.UtsLogNotFound] = "UTS log kaydi bulunamadi.",
+        [LocalizationKeys.UretimTarihiNotFound] = "Uretim tarihi kaydi bulunamadi."
     };
 
     public static string Get(string key, params object[] args)

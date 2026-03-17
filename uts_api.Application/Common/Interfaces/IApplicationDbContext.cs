@@ -17,7 +17,16 @@ public interface IApplicationDbContext
     DbSet<HangfireJobLog> HangfireJobLogs { get; }
     DbSet<Stock> Stocks { get; }
     DbSet<Customer> Customers { get; }
+    DbSet<UtsLog> UtsLogs { get; }
+    DbSet<UretimTarihi> UretimTarihleri { get; }
     DbSet<UtsVermeListItem> UtsVermeListItems { get; }
+    DbSet<UtsUretimListItem> UtsUretimListItems { get; }
+    DbSet<UtsTVermeListItem> UtsTVermeListItems { get; }
+    DbSet<UtsTuketiciVermeListItem> UtsTuketiciVermeListItems { get; }
+    DbSet<UtsIthalatListItem> UtsIthalatListItems { get; }
+    DbSet<UtsImhaListItem> UtsImhaListItems { get; }
+    DbSet<UtsIhracatListItem> UtsIhracatListItems { get; }
+    DbSet<UtsAlmaListItem> UtsAlmaListItems { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

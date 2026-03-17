@@ -68,6 +68,57 @@ public static class PermissionConstants
         public const string View = "uts_verme_list.view";
     }
 
+    public static class UtsUretimList
+    {
+        public const string View = "uts_uretim_list.view";
+    }
+
+    public static class UtsTVermeList
+    {
+        public const string View = "uts_tverme_list.view";
+    }
+
+    public static class UtsTuketiciVermeList
+    {
+        public const string View = "uts_tuketici_verme_list.view";
+    }
+
+    public static class UtsIthalatList
+    {
+        public const string View = "uts_ithalat_list.view";
+    }
+
+    public static class UtsImhaList
+    {
+        public const string View = "uts_imha_list.view";
+    }
+
+    public static class UtsIhracatList
+    {
+        public const string View = "uts_ihracat_list.view";
+    }
+
+    public static class UtsAlmaList
+    {
+        public const string View = "uts_alma_list.view";
+    }
+
+    public static class UtsLogs
+    {
+        public const string View = "uts_logs.view";
+        public const string Create = "uts_logs.create";
+        public const string Update = "uts_logs.update";
+        public const string Delete = "uts_logs.delete";
+    }
+
+    public static class UretimTarihi
+    {
+        public const string View = "uretim_tarihi.view";
+        public const string Create = "uretim_tarihi.create";
+        public const string Update = "uretim_tarihi.update";
+        public const string Delete = "uretim_tarihi.delete";
+    }
+
     public static IReadOnlyCollection<PermissionDefinitionSeedModel> All { get; } =
     [
         new("Auth", "My Profile", Auth.Me, "Read current user"),
@@ -91,6 +142,21 @@ public static class PermissionConstants
         new("Stocks", "Sync Stocks", Stocks.Sync, "Trigger RII_STOCK sync job"),
         new("Customers", "View Customers", Customers.View, "Read RII_CUSTOMERS records"),
         new("Customers", "Sync Customers", Customers.Sync, "Trigger RII_CUSTOMERS sync job"),
-        new("UtsVermeList", "View UTS Verme List", UtsVermeList.View, "Read VWLEGO_UTS_VERME_LIST records")
+        new("UtsVermeList", "View UTS Verme List", UtsVermeList.View, "Read VWLEGO_UTS_VERME_LIST records"),
+        new("UtsUretimList", "View UTS Production List", UtsUretimList.View, "Read VWLEGO_UTS_URETIM_LIST records"),
+        new("UtsTVermeList", "View UTS Undefined Delivery List", UtsTVermeList.View, "Read VWLEGO_UTS_TVERME_LIST records"),
+        new("UtsTuketiciVermeList", "View UTS Consumer Delivery List", UtsTuketiciVermeList.View, "Read VWLEGO_UTS_TUKETICI_VERME_LIST records"),
+        new("UtsIthalatList", "View UTS Import List", UtsIthalatList.View, "Read VWLEGO_UTS_ITHALAT_LIST records"),
+        new("UtsImhaList", "View UTS Disposal List", UtsImhaList.View, "Read VWLEGO_UTS_IMHA_LIST records"),
+        new("UtsIhracatList", "View UTS Export List", UtsIhracatList.View, "Read VWLEGO_UTS_IHRACAT_LIST records"),
+        new("UtsAlmaList", "View UTS Receipt List", UtsAlmaList.View, "Read VWLEGO_UTS_ALMA_LIST records"),
+        new("UtsLogs", "View UTS Logs", UtsLogs.View, "Read UTS log records"),
+        new("UtsLogs", "Create UTS Log", UtsLogs.Create, "Create UTS log records"),
+        new("UtsLogs", "Update UTS Log", UtsLogs.Update, "Update UTS log records"),
+        new("UtsLogs", "Delete UTS Log", UtsLogs.Delete, "Delete UTS log records"),
+        new("UretimTarihi", "View Production Date Records", UretimTarihi.View, "Read production date records"),
+        new("UretimTarihi", "Create Production Date Record", UretimTarihi.Create, "Create production date records"),
+        new("UretimTarihi", "Update Production Date Record", UretimTarihi.Update, "Update production date records"),
+        new("UretimTarihi", "Delete Production Date Record", UretimTarihi.Delete, "Delete production date records")
     ];
 }

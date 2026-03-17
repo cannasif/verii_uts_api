@@ -61,4 +61,6 @@ public static class LocalizationKeys
     public const string HangfireSqlLogFailed = "HangfireSqlLogFailed";
     public const string HangfireDeadLetterCaptured = "HangfireDeadLetterCaptured";
     public const string HangfireHeartbeatExecuted = "HangfireHeartbeatExecuted";
+    public const string UtsLogNotFound = "UtsLogNotFound";
+    public const string UretimTarihiNotFound = "UretimTarihiNotFound";
 }
