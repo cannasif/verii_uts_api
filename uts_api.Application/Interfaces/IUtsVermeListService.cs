@@ -5,5 +5,6 @@ namespace uts_api.Application.Interfaces;
 
 public interface IUtsVermeListService
 {
+    Task<IReadOnlyCollection<UtsVermeListItemDto>> GetAllAsync(CancellationToken cancellationToken = default);
     Task<PagedResult<UtsVermeListItemDto>> GetPagedAsync(PagedRequest request, CancellationToken cancellationToken = default);
 }
