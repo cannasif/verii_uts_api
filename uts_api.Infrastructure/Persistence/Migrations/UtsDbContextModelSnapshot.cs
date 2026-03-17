@@ -847,6 +847,123 @@ namespace uts_api.Infrastructure.Persistence.Migrations
                     b.ToTable("RII_STOCK", (string)null);
                 });
 
+            modelBuilder.Entity("uts_api.Domain.Entities.UretimTarihi", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("CreateUser")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("CreateUser");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedAtUtc");
+
+                    b.Property<DateTime?>("DYedek1")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DYedek1");
+
+                    b.Property<string>("DeleteUser")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("DeleteUser");
+
+                    b.Property<DateTime?>("DeletedAtUtc")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedAtUtc");
+
+                    b.Property<double?>("FYedek1")
+                        .HasColumnType("float")
+                        .HasColumnName("FYedek1");
+
+                    b.Property<double?>("FYedek2")
+                        .HasColumnType("float")
+                        .HasColumnName("FYedek2");
+
+                    b.Property<int?>("IYedek1")
+                        .HasColumnType("int")
+                        .HasColumnName("IYedek1");
+
+                    b.Property<int?>("IYedek2")
+                        .HasColumnType("int")
+                        .HasColumnName("IYedek2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<string>("LotNo")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("LotNo");
+
+                    b.Property<string>("SYedek1")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)")
+                        .HasColumnName("SYedek1");
+
+                    b.Property<string>("SYedek2")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)")
+                        .HasColumnName("SYedek2");
+
+                    b.Property<string>("SeriLotNo")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("SeriLotNo");
+
+                    b.Property<DateTime?>("SonKulTarih")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("SonKulTarih");
+
+                    b.Property<string>("StokKodu")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("StokKodu");
+
+                    b.Property<DateTime?>("Tarih")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("Tarih");
+
+                    b.Property<string>("UpdateUser")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("UpdateUser");
+
+                    b.Property<DateTime?>("UpdatedAtUtc")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedAtUtc");
+
+                    b.Property<byte?>("WfState")
+                        .HasColumnType("tinyint")
+                        .HasColumnName("WfState");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted")
+                        .HasDatabaseName("IX_UretimTarihi_IsDeleted");
+
+                    b.HasIndex("LotNo")
+                        .HasDatabaseName("IX_UretimTarihi_LotNo");
+
+                    b.HasIndex("SeriLotNo")
+                        .HasDatabaseName("IX_UretimTarihi_SeriLotNo");
+
+                    b.HasIndex("StokKodu")
+                        .HasDatabaseName("IX_UretimTarihi_StokKodu");
+
+                    b.HasIndex("Tarih")
+                        .HasDatabaseName("IX_UretimTarihi_Tarih");
+
+                    b.ToTable("RII_URETIM_TARIHI", (string)null);
+                });
+
             modelBuilder.Entity("uts_api.Domain.Entities.User", b =>
                 {
                     b.Property<long>("Id")
@@ -1063,6 +1180,252 @@ namespace uts_api.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("RII_USER_PROFILES", (string)null);
+                });
+
+            modelBuilder.Entity("uts_api.Domain.Entities.UtsLog", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Bno")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("BNO");
+
+                    b.Property<string>("CreateUser")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("CreateUser");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedAtUtc");
+
+                    b.Property<string>("DeleteUser")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("DeleteUser");
+
+                    b.Property<DateTime?>("DeletedAtUtc")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedAtUtc");
+
+                    b.Property<string>("Durum")
+                        .HasMaxLength(1)
+                        .HasColumnType("nchar(1)")
+                        .HasColumnName("DURUM")
+                        .IsFixedLength();
+
+                    b.Property<string>("GonderenKisi")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)")
+                        .HasColumnName("GONDEREN_KISI");
+
+                    b.Property<DateTime?>("GonderimTarihi")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("GONDERIM_TARIHI");
+
+                    b.Property<string>("GonderimTipi")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)")
+                        .HasColumnName("GONDERIM_TIPI");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<decimal?>("Miktar")
+                        .HasPrecision(28, 8)
+                        .HasColumnType("decimal(28,8)")
+                        .HasColumnName("MIKTAR");
+
+                    b.Property<string>("SeriNo")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("SERI_NO");
+
+                    b.Property<int?>("SeriTraInc")
+                        .HasColumnType("int")
+                        .HasColumnName("SERITRAINC");
+
+                    b.Property<int?>("Sira")
+                        .HasColumnType("int")
+                        .HasColumnName("SIRA");
+
+                    b.Property<string>("Sonuc")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SONUC");
+
+                    b.Property<string>("StokKodu")
+                        .HasMaxLength(35)
+                        .HasColumnType("nvarchar(35)")
+                        .HasColumnName("STOK_KODU");
+
+                    b.Property<string>("UpdateUser")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("UpdateUser");
+
+                    b.Property<DateTime?>("UpdatedAtUtc")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedAtUtc");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Bno")
+                        .HasDatabaseName("IX_UtsLog_Bno");
+
+                    b.HasIndex("Durum")
+                        .HasDatabaseName("IX_UtsLog_Durum");
+
+                    b.HasIndex("GonderimTarihi")
+                        .HasDatabaseName("IX_UtsLog_GonderimTarihi");
+
+                    b.HasIndex("IsDeleted")
+                        .HasDatabaseName("IX_UtsLog_IsDeleted");
+
+                    b.HasIndex("SeriNo")
+                        .HasDatabaseName("IX_UtsLog_SeriNo");
+
+                    b.HasIndex("StokKodu")
+                        .HasDatabaseName("IX_UtsLog_StokKodu");
+
+                    b.ToTable("RII_UTS_LOG", (string)null);
+                });
+
+            modelBuilder.Entity("uts_api.Domain.Entities.UtsVermeListItem", b =>
+                {
+                    b.Property<int?>("Adt")
+                        .HasColumnType("int")
+                        .HasColumnName("ADT");
+
+                    b.Property<string>("Bno")
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)")
+                        .HasColumnName("BNO");
+
+                    b.Property<string>("CariIsim")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("CARI_ISIM");
+
+                    b.Property<string>("CariKodu")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
+                        .HasColumnName("CARI_KODU");
+
+                    b.Property<int>("Chk")
+                        .HasColumnType("int")
+                        .HasColumnName("CHK");
+
+                    b.Property<short?>("DepoKod")
+                        .HasColumnType("smallint")
+                        .HasColumnName("DEPOKOD");
+
+                    b.Property<string>("Git")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)")
+                        .HasColumnName("GIT");
+
+                    b.Property<string>("ImalIthal")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("IMALITHAL");
+
+                    b.Property<string>("Kun")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("KUN");
+
+                    b.Property<string>("LsNo")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("LS_NO");
+
+                    b.Property<byte?>("OlcuBr")
+                        .HasColumnType("tinyint")
+                        .HasColumnName("OLCUBR");
+
+                    b.Property<string>("SeriMiLotMu")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)")
+                        .HasColumnName("SERIMILOTMU");
+
+                    b.Property<string>("Sinif")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("SINIF");
+
+                    b.Property<short?>("Sira")
+                        .HasColumnType("smallint")
+                        .HasColumnName("SIRA");
+
+                    b.Property<int?>("SiraNo")
+                        .HasColumnType("int")
+                        .HasColumnName("SIRA_NO");
+
+                    b.Property<decimal?>("StharGcMik")
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("STHAR_GCMIK");
+
+                    b.Property<string>("StokAdi")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)")
+                        .HasColumnName("STOK_ADI");
+
+                    b.Property<string>("StokKodu")
+                        .IsRequired()
+                        .HasMaxLength(35)
+                        .HasColumnType("nvarchar(35)")
+                        .HasColumnName("STOK_KODU");
+
+                    b.Property<int?>("StraInc")
+                        .HasColumnType("int")
+                        .HasColumnName("STRA_INC");
+
+                    b.Property<string>("Strh")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)")
+                        .HasColumnName("STRH");
+
+                    b.Property<string>("Uno")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("UNO");
+
+                    b.Property<string>("UretimBildirimi")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)")
+                        .HasColumnName("URETIMBILDIRIMI");
+
+                    b.Property<string>("UretimLsNo")
+                        .HasMaxLength(53)
+                        .HasColumnType("nvarchar(53)")
+                        .HasColumnName("URETIM_LS_NO");
+
+                    b.Property<string>("Utrh")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)")
+                        .HasColumnName("UTRH");
+
+                    b.Property<string>("UtsDurum")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)")
+                        .HasColumnName("UTS_DURUM");
+
+                    b.ToTable((string)null);
+
+                    b.ToView("VWLEGO_UTS_VERME_LIST", (string)null);
                 });
 
             modelBuilder.Entity("uts_api.Infrastructure.Persistence.RiiFnCariRow", b =>

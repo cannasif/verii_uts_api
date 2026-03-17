@@ -25,7 +25,16 @@ public sealed class UtsDbContext : DbContext, IApplicationDbContext
     public DbSet<HangfireJobLog> HangfireJobLogs => Set<HangfireJobLog>();
     public DbSet<Stock> Stocks => Set<Stock>();
     public DbSet<Customer> Customers => Set<Customer>();
+    public DbSet<UtsLog> UtsLogs => Set<UtsLog>();
+    public DbSet<UretimTarihi> UretimTarihleri => Set<UretimTarihi>();
     public DbSet<UtsVermeListItem> UtsVermeListItems => Set<UtsVermeListItem>();
+    public DbSet<UtsUretimListItem> UtsUretimListItems => Set<UtsUretimListItem>();
+    public DbSet<UtsTVermeListItem> UtsTVermeListItems => Set<UtsTVermeListItem>();
+    public DbSet<UtsTuketiciVermeListItem> UtsTuketiciVermeListItems => Set<UtsTuketiciVermeListItem>();
+    public DbSet<UtsIthalatListItem> UtsIthalatListItems => Set<UtsIthalatListItem>();
+    public DbSet<UtsImhaListItem> UtsImhaListItems => Set<UtsImhaListItem>();
+    public DbSet<UtsIhracatListItem> UtsIhracatListItems => Set<UtsIhracatListItem>();
+    public DbSet<UtsAlmaListItem> UtsAlmaListItems => Set<UtsAlmaListItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
