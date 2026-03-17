@@ -44,7 +44,16 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IStockService, StockService>();
         services.AddScoped<ICustomerFunctionService, CustomerFunctionService>();
         services.AddScoped<ICustomerService, CustomerService>();
+        services.AddScoped<IUtsLogService, UtsLogService>();
+        services.AddScoped<IUretimTarihiService, UretimTarihiService>();
         services.AddScoped<IUtsVermeListService, UtsVermeListService>();
+        services.AddScoped<IUtsUretimListService, UtsUretimListService>();
+        services.AddScoped<IUtsTVermeListService, UtsTVermeListService>();
+        services.AddScoped<IUtsTuketiciVermeListService, UtsTuketiciVermeListService>();
+        services.AddScoped<IUtsIthalatListService, UtsIthalatListService>();
+        services.AddScoped<IUtsImhaListService, UtsImhaListService>();
+        services.AddScoped<IUtsIhracatListService, UtsIhracatListService>();
+        services.AddScoped<IUtsAlmaListService, UtsAlmaListService>();
 
         services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
