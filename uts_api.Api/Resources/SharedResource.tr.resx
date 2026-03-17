@@ -41,4 +41,6 @@
   <data name="PasswordResetSuccessful" xml:space="preserve"><value>Sifre basariyla sifirlandi.</value></data>
   <data name="FetchSuccessful" xml:space="preserve"><value>Kayitlar basariyla getirildi.</value></data>
   <data name="SmtpUpdated" xml:space="preserve"><value>SMTP ayarlari basariyla guncellendi.</value></data>
+  <data name="UtsLogNotFound" xml:space="preserve"><value>UTS log kaydi bulunamadi.</value></data>
+  <data name="UretimTarihiNotFound" xml:space="preserve"><value>Uretim tarihi kaydi bulunamadi.</value></data>
 </root>

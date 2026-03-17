@@ -41,4 +41,6 @@
   <data name="PasswordResetSuccessful" xml:space="preserve"><value>Password reset successfully.</value></data>
   <data name="FetchSuccessful" xml:space="preserve"><value>Records fetched successfully.</value></data>
   <data name="SmtpUpdated" xml:space="preserve"><value>SMTP settings updated successfully.</value></data>
+  <data name="UtsLogNotFound" xml:space="preserve"><value>UTS log record not found.</value></data>
+  <data name="UretimTarihiNotFound" xml:space="preserve"><value>Production date record not found.</value></data>
 </root>
